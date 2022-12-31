@@ -1,0 +1,99 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Buildings/Apartment1/Sprites/Apartment3.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/TransparentBuildings.gd" type="Script" id=2]
+[ext_resource path="res://Assets/2DLight.png" type="Texture" id=3]
+
+
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 42, 26.0123 )
+
+[sub_resource type="OccluderPolygon2D" id=2]
+closed = false
+polygon = PoolVector2Array( -43.4747, -45.6957, -42.7668, 4.80163, 40.7661, 4.80163, 40.7661, -44.7518 )
+
+[node name="Apartment" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( 40, -41, -42, -42, -44, -167, 41, -167 )
+
+[node name="Sprite" type="Sprite" parent="."]
+light_mask = 2
+position = Vector2( -1.59448, -83.5938 )
+texture = ExtResource( 1 )
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+position = Vector2( -1, -21 )
+shape = SubResource( 1 )
+
+[node name="Lights" type="Node2D" parent="."]
+
+[node name="Shadow" type="LightOccluder2D" parent="Lights"]
+occluder = SubResource( 2 )
+
+[node name="Light2D" type="Light2D" parent="Lights"]
+light_mask = 2
+position = Vector2( -1, -62 )
+scale = Vector2( 0.0463644, 0.0734127 )
+texture = ExtResource( 3 )
+texture_scale = 2.02
+color = Color( 1, 0.866667, 0.341176, 0.427451 )
+energy = 1.22
+range_item_cull_mask = 2
+
+[node name="Light2D3" type="Light2D" parent="Lights"]
+light_mask = 2
+position = Vector2( 26, -107 )
+scale = Vector2( 0.0463644, 0.0734127 )
+texture = ExtResource( 3 )
+texture_scale = 1.28
+color = Color( 1, 0.894118, 0.478431, 0.819608 )
+energy = 1.08
+range_item_cull_mask = 2
+
+[node name="Light2D5" type="Light2D" parent="Lights"]
+light_mask = 2
+position = Vector2( -2, -108 )
+scale = Vector2( 0.0463644, 0.0734127 )
+texture = ExtResource( 3 )
+texture_scale = 1.28
+color = Color( 1, 0.894118, 0.478431, 0.819608 )
+energy = 0.46
+range_item_cull_mask = 2
+
+[node name="Light2D6" type="Light2D" parent="Lights"]
+light_mask = 2
+position = Vector2( -29, -61 )
+scale = Vector2( 0.0463644, 0.0734127 )
+texture = ExtResource( 3 )
+texture_scale = 1.28
+color = Color( 1, 0.894118, 0.478431, 0.819608 )
+energy = 0.46
+range_item_cull_mask = 2
+
+[node name="Light2D7" type="Light2D" parent="Lights"]
+light_mask = 2
+position = Vector2( 28, -61 )
+scale = Vector2( 0.0463644, 0.0734127 )
+texture = ExtResource( 3 )
+texture_scale = 1.28
+color = Color( 1, 0.894118, 0.478431, 0.819608 )
+energy = 0.46
+range_item_cull_mask = 2
+
+[node name="Light2D4" type="Light2D" parent="Lights"]
+light_mask = 2
+position = Vector2( -29, -107 )
+scale = Vector2( 0.0463644, 0.0734127 )
+texture = ExtResource( 3 )
+color = Color( 0.635294, 0.545098, 1, 0.647059 )
+energy = 1.05
+range_item_cull_mask = 2
+
+[node name="Tween" type="Tween" parent="."]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

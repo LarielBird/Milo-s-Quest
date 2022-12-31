@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Buildings/LeonexDen/Sprites/longBarstool.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Buildings/LeonexDen/Sprites/tinytable.png" type="Texture" id=2]
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+
+[node name="tinytable" type="Sprite" parent="."]
+position = Vector2( 0, -15.8177 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -6.55316, 0.226389, -6.40451, 3.79401, -4.24908, 6.54405, 4.07537, 6.61838, 6.89974, 3.27373, 6.67676, 0.0777378, 3.70375, -2.6723, 2.14291, -2.6723, 2.17849, -10.992, -1.995, -11.307, -1.45364, -2.41236, -4.23159, -2.31315 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 16.5101, 7.19808, 16.4313, 2.31588, 18.6362, 2.63086, 18.8724, -3.43251, 21.786, -2.96004, 22.1797, 2.55212, 24.6208, 2.63086, 24.3846, 7.11933 )
+
+[node name="longBarstool" type="Sprite" parent="."]
+position = Vector2( 20.3832, -4.63515 )
+texture = ExtResource( 1 )

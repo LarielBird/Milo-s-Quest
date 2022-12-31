@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Buildings/LeonexDen/Sprites/Table2.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16.5866, 34.1794 )
+
+[node name="Table" type="KinematicBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.67984, -24.3448 )
+shape = SubResource( 1 )
+
+[node name="Table2" type="Sprite" parent="."]
+position = Vector2( -0.374588, -26.1543 )
+texture = ExtResource( 1 )
